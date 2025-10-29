@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <cstdlib>
 using namespace std;
 /*													//zad1
 void porownanie(int a, int b);
@@ -61,6 +62,7 @@ void dzielenie(int n) {
 	}
 }
 */
+/*
 void dodawanie(float a, float b);
 void odejmowanie(float a, float b);
 void mnozenie(float a, float b);
@@ -131,4 +133,89 @@ void dzielenie(float a, float b) {
         cout << "Nie mozna dzielic przez 0.";
     }
     cout << a / b << "\n";
+}
+*/
+/*
+int potega(int a, int b);                               //zad 4
+int main() {
+    int a;
+    int b;
+    cout << "Podaj dwie liczby: ";
+    cin >> a >> b;
+    cout << a <<" do potegi " << b << " jest rowne " << potega(a, b);
+}
+int potega(int a, int b) {
+    int wynik=1;
+    for (int i = 0; i < b; i++) {
+        wynik *= a;
+    }
+    return wynik;
+}
+*/
+
+/*
+int silnia(int n);                              //zad 5
+int main() {
+    int n;
+    cin >> n;
+    cout << n <<"! jest rowne " << silnia(n);
+}
+int silnia(int n) {
+    int wynik=1;
+    for (int i = 1; i <= n; i++) {
+        wynik*=i;
+    }
+    return wynik;
+}
+*/
+/*
+int potega(int n);          //zad 6
+int main() {
+    int n;
+    cin >> n;
+    cout << "2 do potegi " << n << " jest rowne " << potega(n);
+}
+int potega(int n) {
+    int wynik = 2;
+    for (int i = 1; i < n; i++) {
+        wynik *= 2;
+    }
+    return wynik;
+}
+*/
+
+int losowanie(int l);
+int procent(int wynik);
+
+
+int main() {                                    //zad 7 
+    int l;
+    cout << "Podaj szczesliwy numer z przedzialu [1,10]:\n";
+    cin >> l;
+    if (l < 0 && l>10) {
+        cout << "Numer nie jest w przedziale [1,10]. Wpisz numer ponownie.\n";
+        cin >> l;
+    }
+    cout << "Szczesliwy numer zostal wylosowany " << losowanie(l) << " razy. Stanowi to " << procent(wynik) << "% wszystkich wylosowanych liczb";
+}
+int losowanie(int l) {
+    int sec = time(NULL);
+    int wynik=0;
+    srand(sec);
+    for (int i = 0; i < 10; i++) {
+        int lucky = rand()%11;
+        if (lucky == 0) {
+            i--;
+        }
+            if (lucky == l) {
+                wynik++;
+            }
+            return wynik;
+    }
+
+}
+int procent(int wynik) {
+    int procent;
+    procent = wynik / 10 * 100;
+    return procent;
 }
