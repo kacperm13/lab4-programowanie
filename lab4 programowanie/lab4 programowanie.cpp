@@ -183,39 +183,52 @@ int potega(int n) {
     return wynik;
 }
 */
+/*
+float losowanie(int l);
 
-int losowanie(int l);
-int procent(int wynik);
 
 
 int main() {                                    //zad 7 
     int l;
     cout << "Podaj szczesliwy numer z przedzialu [1,10]:\n";
     cin >> l;
-    if (l < 0 && l>10) {
+    while (l>10) {
         cout << "Numer nie jest w przedziale [1,10]. Wpisz numer ponownie.\n";
         cin >> l;
     }
-    cout << "Szczesliwy numer zostal wylosowany " << losowanie(l) << " razy. Stanowi to " << procent(wynik) << "% wszystkich wylosowanych liczb";
+    cout << "Szczesliwy numer zostal wylosowany " << losowanie(l) << " razy. Stanowi to " << losowanie(l)/10*100 << "% wszystkich wylosowanych liczb";
 }
-int losowanie(int l) {
+float losowanie(int l) {
     int sec = time(NULL);
-    int wynik=0;
+    float wynik=0;
     srand(sec);
     for (int i = 0; i < 10; i++) {
-        int lucky = rand()%11;
-        if (lucky == 0) {
-            i--;
-        }
-            if (lucky == l) {
-                wynik++;
-            }
-            return wynik;
-    }
+        int lucky = rand() % 10 + 1;
 
+        if (lucky == l) {
+            wynik++;
+        }
+    }
+    return wynik;
 }
-int procent(int wynik) {
-    int procent;
-    procent = wynik / 10 * 100;
-    return procent;
+*/
+/*
+int parzysta(int i);
+int nieparzysta(int i);
+int main() {
+    for (int i = 0; i <= 100; i++) {
+        if (i % 2 == 0) {
+            cout << parzysta(i) << "\n";
+        }
+        if (i % 2 == 1) {
+            cout << nieparzysta(i) << "\n";
+        }
+    }
 }
+int parzysta(int i) {
+    return i / 2;
+}
+int nieparzysta(int i) {
+    return (i - 1) / 2;
+}
+*/
